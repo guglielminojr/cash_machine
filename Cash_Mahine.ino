@@ -7,6 +7,8 @@
 #include "Adafruit_Thermal.h"
 #include "SoftwareSerial.h"
 
+#include "banana.h"
+
 #define TX_PIN 10
 #define RX_PIN 11
 
@@ -221,6 +223,7 @@ void loop() {
 }
 
 void printScontrino() {
+  printer.printBitmap(20, 24, banana);
   printer.println();
   printer.boldOn();
   printer.justify('C');
@@ -247,7 +250,11 @@ void printScontrino() {
 
   printer.println();
   printer.print(F("TOTALE "));
-  printer.println(String(tot));
+  String strTotal = String(tot);
+  printer.println(strTotal);
+  char totBuffer[5];
+  strTotal.toCharArray(totBuffer, 5);
+  printer.printBarcode(totBuffer, CODE39);
 
   printer.feed(3);
   printer.setDefault();
