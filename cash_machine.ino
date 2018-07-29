@@ -19,7 +19,7 @@
 SoftwareSerial SoftSerial(RX_PIN, TX_PIN); // Declare SoftwareSerial obj first
 Adafruit_Thermal printer(&SoftSerial);
 
-#define CATALOGO_SIZE 7
+#define CATALOGO_SIZE 13
 #define SCONTRINO_SIZE 10
 
 int catalog_index = 0;
@@ -37,7 +37,13 @@ Product catalogo[CATALOGO_SIZE] = {
   {"Banane", 3},
   {"Carciofi", 7},
   {"Ciliegie", 5},
-  {"Fragole", 2}
+  {"Fragole", 2},
+  {"Hamburger",6},
+  {"Insalata",1},
+  {"Libro",15},
+  {"Pesche",4},
+  {"Albicocche",5},
+  {"Biglie",10}
 };
 
 Product scontrino[SCONTRINO_SIZE];
